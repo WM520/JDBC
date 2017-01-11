@@ -31,7 +31,7 @@ public class TestDbcp {
 	public void testQuery() throws Exception {
 		
 		String sql = "select * from login";
-		Connection conn = getDataSource().getConnection();
+		Connection conn = DBCPUtil.getConn();
 		System.out.println(conn);
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ResultSet rs = ps.executeQuery();
