@@ -4,6 +4,9 @@
 	<classpathentry kind="src" path="resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="/Users/zhangguodong/Downloads/mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar"/>
+	<classpathentry kind="lib" path="LIB/commons-dbcp2-2.1.1.jar"/>
+	<classpathentry kind="lib" path="LIB/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="LIB/commons-pool2-2.4.2.jar"/>
+	<classpathentry kind="lib" path="LIB/mysql-connector-java-5.1.40-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

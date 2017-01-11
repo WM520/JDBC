@@ -1,12 +1,13 @@
 package day2;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import org.junit.Test;
 
 import com.donghui.smis.util.JdbcUtil;
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
+
 
 public class TranscactionTest {
 

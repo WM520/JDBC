@@ -1,6 +1,9 @@
 package com.donghui.smis.dao.impl;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,9 +11,7 @@ import com.donghui.smis.dao.IStudentDAO;
 import com.donghui.smis.domian.Students;
 import com.donghui.smis.util.JdbcUtil;
 import com.donghui.smis.util.JdbcUtil2;
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
-import com.mysql.jdbc.Statement;
+
 
 public class IStudentDAOIpml implements IStudentDAO{
 	
@@ -97,7 +98,7 @@ public class IStudentDAOIpml implements IStudentDAO{
 			// TODO: handle exception
 			e.printStackTrace();
 		} finally {
-			JdbcUtil2.close(conn, st, rs);
+			JdbcUtil.close(conn, st, rs);
 			
 		}
 		

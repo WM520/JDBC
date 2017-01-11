@@ -1,13 +1,15 @@
 package com.donghui.smis.util;
 
 import java.io.InputStream;
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Properties;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
+
+
 
 public class JdbcUtil {
 	private JdbcUtil() {
@@ -31,7 +33,7 @@ public class JdbcUtil {
 	
 	public static Connection getConn() {
 		try {
-			return (Connection) DriverManager.getConnection(p.getProperty("url"), p.getProperty("user"), p.getProperty("password"));
+			return DriverManager.getConnection(p.getProperty("url"), p.getProperty("user"), p.getProperty("password"));
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
