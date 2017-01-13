@@ -85,29 +85,30 @@ public class IStudentDAOIpml implements IStudentDAO{
 	@Override
 	public void get(int id) throws Exception {
 		// TODO Auto-generated method stub
-		try {
-			conn = JdbcUtil2.getConn();
-			String sql = "select *from login where id = " + id;
-			st = (Statement) conn.createStatement();
-			rs = st.executeQuery(sql);
-			while (rs.next()) {
-				Students stu = new Students();
-				Long aid = rs.getLong("id");
-				String name = rs.getString("user");
-				String age = rs.getString("password");
-				stu.setAge(age);
-				stu.setId(aid);
-				stu.setName(name);
-				System.out.println(stu);
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		} finally {
-			JdbcUtil.close(conn, st, rs);
-			
-		}
-		
+//		try {
+//			conn = JdbcUtil2.getConn();
+//			String sql = "select *from login where id = " + id;
+//			st = (Statement) conn.createStatement();
+//			rs = st.executeQuery(sql);
+//			while (rs.next()) {
+//				Students stu = new Students();
+//				Long aid = rs.getLong("id");
+//				String name = rs.getString("user");
+//				String age = rs.getString("password");
+//				stu.setAge(age);
+//				stu.setId(aid);
+//				stu.setName(name);
+//				System.out.println(stu);
+//			}
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//			e.printStackTrace();
+//		} finally {
+//			JdbcUtil.close(conn, st, rs);
+//			
+//		}
+		String sql = "select * from login where id = ?";
+		JdbcTemplate.query(sql, new StudentResultSetHandler<>(), id);
 	}
 
 	@Override
@@ -134,6 +135,25 @@ public class IStudentDAOIpml implements IStudentDAO{
 		} finally {
 			JdbcUtil.close(conn, st, rs);
 		}
+	}
+	
+	class StudentResultSetHandler<T> implements IResultSetHandler<day2.jdbctemplate.Students> {
+
+		@Override
+		public List<day2.jdbctemplate.Students> handle(ResultSet rs) throws Exception {
+			// TODO Auto-generated method stub
+			List<day2.jdbctemplate.Students> list = new ArrayList<>();
+			while(rs.next()) {
+				day2.jdbctemplate.Students stu = new day2.jdbctemplate.Students();
+				list.add(stu);
+				Long id = rs.getLong("id");
+				String name = rs.getString("user");
+				stu.setId(id);
+				stu.setName(name);
+			}
+			return list;
+		}
+		
 	}
 
 }
