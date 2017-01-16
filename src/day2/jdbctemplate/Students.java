@@ -1,5 +1,8 @@
 package day2.jdbctemplate;
 
+
+
+@Table("l_student") 
 public class Students {
 	
 	

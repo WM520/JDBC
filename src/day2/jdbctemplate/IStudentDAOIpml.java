@@ -1,7 +1,7 @@
 package day2.jdbctemplate;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
+//import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -10,7 +10,6 @@ import java.util.List;
 import com.donghui.smis.dao.IStudentDAO;
 import com.donghui.smis.domian.Students;
 import com.donghui.smis.util.JdbcUtil;
-import com.donghui.smis.util.JdbcUtil2;
 
 
 public class IStudentDAOIpml implements IStudentDAO{
@@ -18,7 +17,7 @@ public class IStudentDAOIpml implements IStudentDAO{
 	
 	private Connection conn;
 	private Statement st;
-	private PreparedStatement pt;
+//	private PreparedStatement pt;
 	private ResultSet rs;
 
 	@Override
